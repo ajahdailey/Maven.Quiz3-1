@@ -10,8 +10,11 @@ import java.util.Set;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
+       //get the beginning of string
         String theBeginning = str.substring(0, indexToCapitalize);
+       //capitalize character
         Character makeUpperCase = Character.toUpperCase(str.charAt(indexToCapitalize));
+       //get ending of string
         String theEnding = str.substring(indexToCapitalize + 1);
         return theBeginning + makeUpperCase + theEnding;
     }

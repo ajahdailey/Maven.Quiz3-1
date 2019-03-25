@@ -16,7 +16,9 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
+        //loop through
         for(SomeType type : array){
+            //if type is odd
             if(getNumberOfOccurrences(type) % 2 == 1){
                 return type;
             }
@@ -25,7 +27,9 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findEvenOccurringValue() {
+        //loop through
         for(SomeType type : array){
+            //if type is even
             if(getNumberOfOccurrences(type) % 2 == 0){
                 return type;
             }
@@ -34,9 +38,13 @@ public class ArrayUtility<SomeType> {
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
+       //need counter, start at zero
         int counter = 0;
+        //loop through
         for(SomeType type : array){
+            //if the value = type
             if(valueToEvaluate.equals(type)){
+               //add to counter
                 counter++;
             }
 
@@ -46,16 +54,18 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-
-        List<SomeType> filtered = new ArrayList<>();
+        //a list of 'some type'.
+        List<SomeType> filter = new ArrayList<>();
+        //loop through
         for(SomeType type : array){
+            //apply predicate to type
             if (predicate.apply(type)){
-                filtered.add(type);
+                filter.add(type);
             }
         }
 
-        SomeType[] newArray = Arrays.copyOf(array, filtered.size());
+        SomeType[] newArray = Arrays.copyOf(array, filter.size());
 
-        return filtered.toArray(newArray);
+        return filter.toArray(newArray);
     }
 }

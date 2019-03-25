@@ -18,9 +18,11 @@ public class SquareArrayAnalyzer {
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
         Arrays.sort(inputArray);
         Arrays.sort(squaredValues);
-
+        //go through array
         for(int i = 0; i < inputArray.length; i++) {
+           //element = value*value
             int square = inputArray[i] * inputArray[i];
+            //if not equal
             if (square != squaredValues[i]) {
                 return false;
             }
